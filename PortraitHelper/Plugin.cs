@@ -1,21 +1,21 @@
-﻿using Dalamud.Game.Command;
+using Dalamud.Game.Command;
 using Dalamud.IoC;
 using Dalamud.Plugin;
 using System.IO;
 using Dalamud.Interface.Windowing;
-using SamplePlugin.Windows;
+using PortraitHelper.Windows;
 
-namespace SamplePlugin
+namespace PortraitHelper
 {
     public sealed class Plugin : IDalamudPlugin
     {
-        public string Name => "Sample Plugin";
-        private const string CommandName = "/pmycommand";
+        public string Name => "Potrait Helper";
+        private const string CommandName = "/pportrait";
 
         private DalamudPluginInterface PluginInterface { get; init; }
         private CommandManager CommandManager { get; init; }
         public Configuration Configuration { get; init; }
-        public WindowSystem WindowSystem = new("SamplePlugin");
+        public WindowSystem WindowSystem = new("PortraitHelper");
 
         private ConfigWindow ConfigWindow { get; init; }
         private MainWindow MainWindow { get; init; }
@@ -42,7 +42,7 @@ namespace SamplePlugin
 
             this.CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
             {
-                HelpMessage = "A useful message to display in /xlhelp"
+                HelpMessage = "Type /pportrait for configuration window"
             });
 
             this.PluginInterface.UiBuilder.Draw += DrawUI;

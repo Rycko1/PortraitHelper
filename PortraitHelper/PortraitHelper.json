@@ -1,0 +1,13 @@
+{
+    "Author": "Rycko",
+    "Name": "Portrait Helper",
+    "Punchline": "Provides improvements to the in game portrait system",
+    "Description": "A plugin to provide improvements and capabilities to the portrait system. Type /pportrait for configuration window",
+    "InternalName": "portraitHelper",
+    "ApplicableVersion": "any",
+    "Tags": [
+        "portrait",
+        "rycko",
+        "instant portrait"
+    ]
+}
