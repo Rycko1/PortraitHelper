@@ -12,17 +12,16 @@ namespace PortraitHelper
         public bool SomePropertyToBeSavedAndWithADefault { get; set; } = true;
 
         // the below exist just to make saving less cumbersome
-        [NonSerialized]
-        private DalamudPluginInterface? pluginInterface;
+        private DalamudPluginInterface? PluginInterface { get; set; }
 
         public void Initialize(DalamudPluginInterface pluginInterface)
         {
-            this.pluginInterface = pluginInterface;
+            PluginInterface = pluginInterface;
         }
 
         public void Save()
         {
-            this.pluginInterface!.SavePluginConfig(this);
+            PluginInterface!.SavePluginConfig(this);
         }
     }
 }
